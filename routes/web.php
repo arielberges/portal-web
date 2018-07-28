@@ -17,3 +17,10 @@ Route::get('/aaaa', function () {
 
 Route::get('/', 'HomeController@index');
 	
+
+Route::get('/admin/page', 'AdminPageController@index');
+Route::get('/admin/page/create', 'AdminPageController@edit');
+Route::get('/admin/page/edit/{id}', 'AdminPageController@edit');
+Route::post('/admin/page/create', 'AdminPageController@postEdit');
+Route::post('/admin/page/edit/{id}', 'AdminPageController@postEdit');
+Route::get('/admin/page/delete/{id}', 'AdminPageController@delete');

@@ -1,16 +1,17 @@
-<?php 
-$current_screen = 1;
-?>
 <!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Figured Blog</title>
+  <title>AdminLTE 2 | Starter</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -24,24 +25,9 @@ $current_screen = 1;
   <link rel="stylesheet" href="/plugins/Ion.RangeSlider/css/ion.rangeSlider.css">
   
   <link rel="stylesheet" href="/plugins/Ion.RangeSlider/css/ion.rangeSlider.skinHTML5.css">
-   
-	<!-- jQuery 2.2.0 -->
-	<script src="/plugins/jQuery/jQuery-2.2.0.min.js"></script>
-	<!-- Bootstrap 3.3.6 -->
-	<script src="/bootstrap/js/bootstrap.min.js"></script>
-	<!-- AdminLTE App -->
-	<script src="/panel/js/app.min.js"></script>
-	
-	<script src="/plugins/Ion.RangeSlider/js/ion-rangeSlider/ion.rangeSlider.js"></script>
-	
-	<script src="/js/jquery.form.min.js"></script>
-	<script src="/js/bootbox.min.js"></script>
-	
-	<link rel="stylesheet" href="/css/app.css">
-  
-	<link rel="stylesheet" type="text/css" href="//cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css">
-  
-  	@yield('styles')   
+ 
+  <link rel="stylesheet" href="/panel/css/skins/skin-blue.min.css">
+
   
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,210 +36,215 @@ $current_screen = 1;
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   
+  <!-- jQuery 2.2.0 -->
+  <script src="/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+  <!-- Bootstrap 3.3.6 -->
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/panel/js/app.min.js"></script>
+
+  <script src="/plugins/Ion.RangeSlider/js/ion-rangeSlider/ion.rangeSlider.js"></script>
   
+  <script src="/js/jquery.form.min.js"></script>
+  <script src="/js/bootbox.min.js"></script>
+	
+  <link rel="stylesheet" href="/css/app.css">
+  <link href="/css/figured.css" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="//cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css">
+  
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-
-<?php $user = Auth::user();
-      //$user_full_name = $user->name;
-      $user_full_name = 'Pepe';
-      //$is_admin = $user->isAdmin(); 
-      $is_admin = true; 
-      ?>
-
-<body class="hold-transition skin-blue sidebar-mini" style="font-family: Lato">
-
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
+  <!-- Main Header -->
   <header class="main-header">
-    <!-- Logo -->
-    <a href="/" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>FC</b></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><img src="/images/logo-asistente.png" style="width:144px"></span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-      
-      <form class="navbar-form active" role="search">
-		<div class="input-group">
-			<input id="search-input-box" type="text" class="form-control pull-right search-input" placeholder="Escribí acá lo que buscás...">
-				<span class="input-group-btn">
-					<button type="reset" class="btn btn-nav-search" onclick="closeSearchBox()">
-						<i class="mdi mdi-magnify"></i>
-					</button>
-					<button id="cancel-search" type="reset" class="btn btn-nav-search" onclick="closeSearchBox()">
-						<i class="mdi mdi-window-close"></i>
-					</button>
-				</span>
-			</div>
-		</form>
-      
-		<div class="back-breadcrumb-btn <?php echo ($breadcrumbs->count() <= 1 ? 'hide' : '');?>">
-			<i onclick="backBreadcrumb();"  role="button"
-	         	class="mdi mdi-arrow-left header-arrow" aria-hidden="true"></i>
-		</div>
-      
-      	<div class="breadcrumbs-container">
-			<label>@yield('bredcrumb')</label>
-		</div>
-      
 
-		<div class="navbar-custom-menu">
-      
-		      
-	        <ul class="nav navbar-nav">
-	          <!-- User Account: style can be found in dropdown.less -->
-	          <li class="dropdown user user-menu">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-align: right">
-	            	<div class="nav-image-box">
-			            	<i class="mdi mdi-account"></i>
-	            	</div>
-	              	<span class="hidden-xs nav-profile-section">Hola, <?php echo $user_full_name;?> <i class="fa fa-angle-down" aria-hidden="true" style="margin-left: 10px; margin-right: 10px"></i></span>
-	            </a>
-	            <ul class="dropdown-menu" style=" background-color: #222d32; width: 133px; min-width: 133px">
-	              <!-- Menu Body -->
-	              <li class="user-body">
-	                <div class="row">
-	                  <div class="col-xs-12">
-	                    <a href="/perfil" style="color: #FFF!important; background: none!important">Mi Perfil</a>
-	                  </div>
-	                  <div class="col-xs-12" style= "margin-top: 10px;">
-	                    <a style="color: #FFF!important; background: none!important" href="{{ url('/logout') }}"
-	                                        onclick="event.preventDefault();
-	                                                 document.getElementById('logout-form').submit();">
-	                                        Cerrar Sesi&oacute;n
-	                                    </a>
-	
-	                                    <form id="logout-form" action="{{ url('/logout') }}" method="GET" style="display: none;">
-	                                        {{ csrf_field() }}
-	                                    </form>
-	                  </div>
-	                </div>
-	                <!-- /.row -->
-	              </li>
-	            </ul>
-	          </li>
-	          <!-- Control Sidebar Toggle Button -->
-	        </ul>
-		</div>
-    </nav>
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>LT</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
+    
   </header>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
 
-  	<section class="sidebar">
-		<!-- sidebar menu: : style can be found in sidebar.less -->
-		<ul class="sidebar-menu">
-			<li class="treeview <?php echo $current_screen == HOME_SCREEN ? 'active' : '';?>">
-				<a href="/home">
-					<i class="mdi mdi-home"></i> <span>Inicio</span>
-					<i class="mdi mdi-arrow-right pull-right"></i>
-				</a>
-			</li>
-			<li class="treeview <?php echo $current_screen == PRODUCT_SCREEN ? 'active' : '';?>">
-	          <a href="/productos">
-	            <i class="mdi mdi-animation"></i> <span>Productos</span>
-	            <i class="mdi mdi-arrow-right pull-right"></i>
-	          </a>
-	        </li>
-	        <li class="treeview <?php echo $current_screen == SURVEY_SCREEN ? 'active' : '';?>">
-				<a href="/encuestas">
-					<i class="mdi mdi-file-document"></i> <span>Encuestas</span>
-					<i class="mdi mdi-arrow-right pull-right"></i>
-				</a>
-			</li>
-			<li class="treeview <?php echo $current_screen == COLLABORATION_SCREEN ? 'active' : '';?>">
-				<a href="/colaboracion">
-					<i class="mdi mdi-account-multiple"></i> <span>Colaboraci&oacute;n</span>
-					<i class="mdi mdi-arrow-right pull-right"></i>
-				</a>
-			</li>
-	        <li class="hide treeview <?php echo $current_screen == SURVEY_SCREEN ? 'active' : '';?>">
-				<a href="/encuestas">
-					<i class="mdi mdi-pencil-box"></i> <span>Encuestas</span>
-					<i class="mdi mdi-arrow-right pull-right"></i>
-				</a>
-			</li>
-	        <!-- li class="treeview <?php echo $current_screen == STADISTIC_SCREEN ? 'active' : '';?>">
-				<a href="/estadisticas">
-					<i class="mdi mdi-chart-bar"></i> <span>Estad&iacute;sticas</span>
-					<i class="mdi mdi-arrow-right pull-right"></i>
-				</a>
-			</li> -->
-			<li class="treeview <?php echo $current_screen == GLOSSARY_SCREEN ? 'active' : '';?>">
-				<a href="/glosario">
-					<i class="mdi mdi-help-circle"></i> <span>Glosario</span>
-					<i class="mdi mdi-arrow-right pull-right"></i>
-				</a>
-			</li>
-			<li class="treeview <?php echo $current_screen == PROFILE_SCREEN ? 'active' : '';?>">
-				<a href="/perfil">
-					<i class="mdi mdi-account"></i><span>Mi Perfil</span>
-					<i class="mdi mdi-arrow-right pull-right"></i>
-				</a>
-			</li>
-			
-			@if($is_admin)
-				<li class="treeview  <?php echo $current_screen == ADMIN_SCREEN ? 'active' : '';?>">
-		          <a href="#">
-		            <i class="mdi mdi-view-dashboard" style="font-size: 22px"></i> <span>Admin</span>
-		            <i class="mdi mdi-arrow-right pull-right"></i>
-		          </a>
-		          <ul class="treeview-menu" style="background-color: #3c3c46!important">
-		            <li><a href="/admin/companias" style="color: #ffffff"><i class="fa fa-circle-o"></i>Compañ&iacute;as</a></li>
-		            <li><a href="/admin/productos" style="color: #ffffff"><i class="fa fa-circle-o"></i>Productos</a></li>
-		            <li><a href="/admin/caracteristicas" style="color: #ffffff"><i class="fa fa-circle-o"></i>Caracter&iacute;sticas</a></li>
-		            <li><a href="/admin/beneficios" style="color: #ffffff"><i class="fa fa-circle-o"></i>Beneficios</a></li>
-		            <li><a href="/admin/desventajas" style="color: #ffffff"><i class="fa fa-circle-o"></i>Desventajas</a></li>
-		            <li><a href="/admin/planes" style="color: #ffffff"><i class="fa fa-circle-o"></i>Planes</a></li>
-		            <li><a href="/admin/detalles-de-planes" style="color: #ffffff"><i class="fa fa-circle-o"></i>Detalles de Planes</a></li>
-		            <li><a href="/admin/sistemas-operativos" style="color: #ffffff"><i class="fa fa-circle-o"></i>Sistemas Operativos</a></li>
-		            <li><a href="/admin/configuracion-servidores" style="color: #ffffff"><i class="fa fa-circle-o"></i>Configuraci&oacute;n de Servidores</a></li>
-		            <li><a href="/admin/noticias" style="color: #ffffff"><i class="fa fa-circle-o"></i>Noticias</a></li>
-		            <li><a href="/admin/encuestas" style="color: #ffffff"><i class="fa fa-circle-o"></i>Encuestas</a></li>
-		            <li><a href="/admin/colaboracion" style="color: #ffffff"><i class="fa fa-circle-o"></i>Colaboraci&oacute;n</a></li>
-		            <li><a href="/admin/glosario" style="color: #ffffff"><i class="fa fa-circle-o"></i>Glosario</a></li>
-		          </ul>
-		        </li>
-	        @endif
-			
-		</ul>
-	</section>
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="/panel/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Alexander Pierce</p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">HEADER</li>
+        <!-- Optionally, you can add icons to the links -->
+        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Link in level 2</a></li>
+            <li><a href="#">Link in level 2</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
     <!-- /.sidebar -->
   </aside>
 
-  	@if(isset($family_header))
-  		@include('layouts.colored-menu')
-  	@endif
-  	
-	@yield('content')    
-  
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        @yield('header-title')
+        <small>@yield('header-description')</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      @yield('content')
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane active" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:;">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                <p>Will be 23 on April 24th</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:;">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="pull-right-container">
+                    <span class="label label-danger pull-right">70%</span>
+                  </span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+      </div>
+      <!-- /.tab-pane -->
+      <!-- Stats tab content -->
+      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+      <!-- /.tab-pane -->
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+          <!-- /.form-group -->
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-
-<script>
-function backBreadcrumb() {
-	$(".breadcrumbs li:not(.active):last a")[0].click();
-}
-
-function openSearchBox() {
-	$(".navbar-static-top").addClass("searching");
-	$("#search-input-box").val("");
-	$("#search-input-box").focus();
-}
-
-function closeSearchBox() {
-	$(".navbar-static-top").removeClass("searching");
-	$("#search-input-box").val("");
-}
-
-
-</script>
 
 </body>
 </html>
