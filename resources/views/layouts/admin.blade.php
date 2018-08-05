@@ -27,7 +27,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/plugins/Ion.RangeSlider/css/ion.rangeSlider.skinHTML5.css">
  
   <link rel="stylesheet" href="/panel/css/skins/skin-blue.min.css">
-
+  
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker-bs3.css">
+  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
+  <link rel="stylesheet" href="/plugins/datatables/jquery.dataTables.css">
   
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,8 +52,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="/js/jquery.form.min.js"></script>
   <script src="/js/bootbox.min.js"></script>
 	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+  <script src="/plugins/daterangepicker/daterangepicker.js"></script>
+  <script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
+
+  <link rel="stylesheet" href="/plugins/bootstrap-select/css/bootstrap-select.min.css">
+  
+  <script src="/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+  <script src="/plugins/bootstrap-select/js/bootstrap-select-ajax.js"></script>
+  
+	
   <link rel="stylesheet" href="/css/app.css">
-  <link href="/css/figured.css" rel="stylesheet">
+  <link href="/css/portal.css" rel="stylesheet">
   
   <link rel="stylesheet" type="text/css" href="//cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css">
   
@@ -114,20 +128,8 @@ desired effect
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li>
+        <li class="<?php echo $current_screen == ADMIN_CHANNEL_SCREEN ? 'active' : '';?>"><a href="/admin/channel"><i class="fa fa-link"></i> <span>Channels</span></a></li>
+        <li class="<?php echo $current_screen == ADMIN_WEBINAR_SCREEN ? 'active' : '';?>"><a href="/admin/webinar"><i class="fa fa-link"></i> <span>Webinars</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -165,7 +167,7 @@ desired effect
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2018 <a href="#">Company</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

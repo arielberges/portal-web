@@ -18,9 +18,17 @@ Route::get('/aaaa', function () {
 Route::get('/', 'HomeController@index');
 	
 
-Route::get('/admin/page', 'AdminPageController@index');
-Route::get('/admin/page/create', 'AdminPageController@edit');
-Route::get('/admin/page/edit/{id}', 'AdminPageController@edit');
-Route::post('/admin/page/create', 'AdminPageController@postEdit');
-Route::post('/admin/page/edit/{id}', 'AdminPageController@postEdit');
-Route::get('/admin/page/delete/{id}', 'AdminPageController@delete');
+Route::get('/admin/channel', 'AdminChannelController@index');
+Route::get('/admin/channel/create', 'AdminChannelController@edit');
+Route::get('/admin/channel/edit/{id}', 'AdminChannelController@edit');
+Route::post('/admin/channel/create', 'AdminChannelController@postEdit');
+Route::post('/admin/channel/edit/{id}', 'AdminChannelController@postEdit');
+Route::get('/admin/channel/delete/{id}', 'AdminChannelController@delete');
+
+Route::get('/admin/webinar', 'AdminWebinarController@index');
+Route::get('/admin/webinar/create', 'AdminWebinarController@edit');
+Route::get('/admin/webinar/edit/{id}', 'AdminWebinarController@edit');
+Route::post('/admin/webinar/create', 'AdminWebinarController@postEdit');
+Route::post('/admin/webinar/edit/{id}', 'AdminWebinarController@postEdit');
+Route::get('/admin/webinar/delete/{id}', 'AdminWebinarController@delete');
+
