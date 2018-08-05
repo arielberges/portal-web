@@ -1,11 +1,3 @@
 .content-wrapper, .right-side, .main-footer {
     margin-left: 110px;
 }
-
-.skin-blue .content-header {
-	margin-left: 135px;
-}
-
-.edit-page .mce-tinymce.mce-container.mce-panel {
-	min-height: 1000px;
-}
