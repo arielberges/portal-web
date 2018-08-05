@@ -5,11 +5,7 @@
 @endsection
 
 @section('header-title')
-Page Header
-@endsection
-
-@section('header-description')
-Optional description
+Webinar
 @endsection
 
 @section('content')

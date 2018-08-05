@@ -101,9 +101,9 @@ desired effect
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>P</b>WEB</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Portal</b>Web</span>
     </a>
     
   </header>
@@ -116,18 +116,12 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/panel/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">ADMIN</li>
         <li class="<?php echo $current_screen == ADMIN_CHANNEL_SCREEN ? 'active' : '';?>"><a href="/admin/channel"><i class="fa fa-link"></i> <span>Channels</span></a></li>
         <li class="<?php echo $current_screen == ADMIN_WEBINAR_SCREEN ? 'active' : '';?>"><a href="/admin/webinar"><i class="fa fa-link"></i> <span>Webinars</span></a></li>
       </ul>
@@ -144,7 +138,7 @@ desired effect
         @yield('header-title')
         <small>@yield('header-description')</small>
       </h1>
-      <ol class="breadcrumb">
+      <ol class="breadcrumb hide">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
         <li class="active">Here</li>
       </ol>

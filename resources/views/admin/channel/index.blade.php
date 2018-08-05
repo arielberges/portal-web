@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
-@section('styles')
+@section('header-title')
+Channels
 @endsection
 
 @section('content')
@@ -55,13 +56,4 @@ function delete_channel(channel_id) {
 </script>
  
  
-@endsection
-
-@section('bredcrumb')
-<?php 	$breadcrumbs = new Creitive\Breadcrumbs\Breadcrumbs;
-  		$breadcrumbs->setDivider('<i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;');
-		$breadcrumbs->addCrumb('Admin', '/admin/channel');
-		$breadcrumbs->addCrumb('Channel', '/admin/channel');
-		echo $breadcrumbs->render();
-?>
 @endsection
