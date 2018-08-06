@@ -13,7 +13,7 @@ Channel
 <div class="content-wrapper edit-channel">
     
 	@if (count($errors) > 0)
-	<div class="row">
+	<div class="row"  style="margin-left: 25px;">
 		<div class="col-md-4 alert alert-danger result-ko">
 			<strong>ERROR!</strong> <span id="error-message"></span>
 			<ul>

@@ -3,6 +3,7 @@
 		<tr>
 			<th>Code</th>
 			<th>Title</th>
+			<th>Channel</th>
 			<th>Start Time</th>
 			<th>End Time</th>
 			<th></th>
@@ -14,7 +15,8 @@
 			<tr>
 				<td>{{ $webinar->code }}</td>
 				<td>{{ $webinar->title }}</td>
-				<td>{{ $webinar->start_time }}</td>
+				<td>{{ $webinar->channel->code}}</td>
+				<td>{{ $webinar->start_time_for_view() }}</td>
 				<td>{{ $webinar->end_time_for_view() }}</td>
 				<td class="event-action-column">
 					<a class="btn-edit" href="/admin/webinar/edit/{{$webinar->id}}">

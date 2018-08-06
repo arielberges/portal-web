@@ -33,3 +33,5 @@ Route::post('/admin/webinar/edit/{id}', 'AdminWebinarController@postEdit');
 Route::get('/admin/webinar/delete/{id}', 'AdminWebinarController@delete');
 
 Route::get('/webinar', 'WebinarController@index');
+Route::get('/webinar/list/{id}', 'WebinarController@webinarList');
+Route::get('/webinar/show/{id}', 'WebinarController@webinar');

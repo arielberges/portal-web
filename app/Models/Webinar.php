@@ -21,4 +21,8 @@ class Webinar extends Model {
     public function users() {
         return $this->belongsToMany('App\User','webinars_authors');
     }
+    
+    public function channel() {
+        return $this->belongsTo('App\Models\Channel');
+    }
 }

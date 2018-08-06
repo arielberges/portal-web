@@ -8,7 +8,7 @@ Webinars
   
 <div class="content-wrapper">
     
-    <div class="row">
+    <div class="row" style="margin-left: 25px;">
 		<div class="col-md-4 alert alert-danger result-ko hidden">
 			  <strong>ERROR!</strong> <span id="error-message"></span>
 		</div>

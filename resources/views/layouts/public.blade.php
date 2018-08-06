@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Blog</title>
+  <title>Portal Web</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="/js/bootbox.min.js"></script>
 	
   <link rel="stylesheet" href="/css/app.css">
-  <link href="/css/figured.css" rel="stylesheet">
+  <link href="/css/portal.css" rel="stylesheet">
   
   <link rel="stylesheet" type="text/css" href="//cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css">
   

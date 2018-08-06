@@ -16,13 +16,29 @@ use DateTime;
 class WebinarController extends Controller {
 
 	public function __construct() {
-        //$this->middleware('admin');
-	    view()->share('current_screen', ADMIN_WEBINAR_SCREEN);
     }
 
 	public function index() {
+	    
+	    $channels =  Channel::all();
+	    $channels_list = $channels->pluck('name', 'id');
 	     
-        return view('webinar.index', compact('webinars'));
+        return view('webinar.index', compact('channels_list'));
     }
     
+    public function webinarList($id) {
+        
+        $webinars = Webinar::where('channel_id', $id)->get();
+        
+        return view('webinar.list', compact('webinars'));
+        
+    }
+    
+    public function webinar($id) {
+        
+        $webinar = Webinar::find($id);
+        
+        return view('webinar.show', compact('webinar'));
+        
+    }
 }

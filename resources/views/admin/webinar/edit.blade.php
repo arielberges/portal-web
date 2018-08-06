@@ -13,7 +13,7 @@ Webinar
 <div class="content-wrapper edit-webinar">
     
 	@if (count($errors) > 0)
-	<div class="row">
+	<div class="row"  style="margin-left: 25px;">
 		<div class="col-md-4 alert alert-danger result-ko">
 			<strong>ERROR!</strong> <span id="error-message"></span>
 			<ul>
@@ -110,9 +110,6 @@ Webinar
     </div>
 </div>
 
-<script src="/js/tinymce/tinymce.min.js"></script>
-
-
 <script>
 			
 $(document).ready(function(){
@@ -129,18 +126,4 @@ function submitForm() {
 
 </script>
 
-@endsection
-
-@section('bredcrumb')
-<?php 	$breadcrumbs = new Creitive\Breadcrumbs\Breadcrumbs;
-  		$breadcrumbs->setDivider('<i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;');
-		$breadcrumbs->addCrumb('Admin', '/admin/webinar');
-		$breadcrumbs->addCrumb('Webinar', '/admin/webinar');
-		if($webinar->id) {
-			$breadcrumbs->addCrumb('Save', '/admin/webinar');
-		} else {
-			$breadcrumbs->addCrumb('Back', '/admin/webinar');
-		}
-		echo $breadcrumbs->render();
-?>
 @endsection

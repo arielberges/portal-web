@@ -39,3 +39,17 @@ select.form-control:not([size]):not([multiple]) {
 	height: 34px;
 	background-color: white;
 }
+
+.btn-edit {
+	font-size: 15px;
+}
+
+.btn-delete {
+	font-size: 15px;
+    margin-left: 5px;
+}
+
+.btn-show {
+	font-size: 15px;
+    margin-left: 5px;
+}
